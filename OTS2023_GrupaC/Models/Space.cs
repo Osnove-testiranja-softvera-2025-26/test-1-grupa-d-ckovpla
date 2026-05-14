@@ -52,7 +52,7 @@ namespace OTS2026_GrupaD.Models
             }
         }
 
-        public void EmptyTileOnLocation(Location location)
+        public void EmptyTileOnLocation(playerLocation location)
         {
             int x = location.X;
             int y = location.Y;

@@ -26,7 +26,7 @@ namespace OTS2026_GrupaD
         public Space Map { get; set; }
         public Player Player { get; set; }
 
-        public Game(Location playerLocation, Location beeLocation)
+        public Game(playerLocation playerLocation, playerLocation beeLocation)
         {
             Map = new Space();
             Map.InitializeMap();
@@ -46,7 +46,7 @@ namespace OTS2026_GrupaD
 
         public void MovePlayer(Direction move)
         {
-            Location playerPositionAfterMove = Player.GetLocationAfterMove(move);
+            playerLocation playerPositionAfterMove = Player.GetLocationAfterMove(move);
             bool positionIsValid = ValidateLocation(playerPositionAfterMove);
             if (positionIsValid)
             {
@@ -54,7 +54,7 @@ namespace OTS2026_GrupaD
             }
         }
 
-        public bool ValidateLocation(Location location)
+        public bool ValidateLocation(playerLocation location)
         {
             int x = location.X;
             int y = location.Y;
@@ -74,7 +74,7 @@ namespace OTS2026_GrupaD
             }
         }
 
-        private bool ValidateLocationInsideMap(Location location)
+        private bool ValidateLocationInsideMap(playerLocation location)
         {
             int x = location.X;
             int y = location.Y;

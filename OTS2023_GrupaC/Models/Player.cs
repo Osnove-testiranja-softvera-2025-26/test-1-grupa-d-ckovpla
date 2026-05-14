@@ -3,7 +3,7 @@ namespace OTS2026_GrupaD.Models
 {
     public class Player
     {
-        public Location Location { get; set; }
+        public playerLocation Location { get; set; }
         public int AmountOfFlowers { get; set; }
         public int AmountOfHoneyJars { get; set; }
         public bool BeeCollected { get; set; }
@@ -12,7 +12,7 @@ namespace OTS2026_GrupaD.Models
         {
         }
 
-        public Player(Location location)
+        public Player(playerLocation location)
         {
             Location = location;
         }
@@ -74,7 +74,7 @@ namespace OTS2026_GrupaD.Models
             Location.Z++;
         }
 
-        public Location GetLocationAfterMove(Direction move)
+        public playerLocation GetLocationAfterMove(Direction move)
         {
             int x = Location.X;
             int y = Location.Y;
@@ -82,17 +82,17 @@ namespace OTS2026_GrupaD.Models
             switch (move)
             {
                 case Direction.Up:
-                    return new Location(x, y - 1, z);
+                    return new playerLocation(x, y - 1, z);
                 case Direction.Down:
-                    return new Location(x, y + 1, z);
+                    return new playerLocation(x, y + 1, z);
                 case Direction.Left:
-                    return new Location(x - 1, y, z);
+                    return new playerLocation(x - 1, y, z);
                 case Direction.Right:
-                    return new Location(x + 1, y, z);
+                    return new playerLocation(x + 1, y, z);
                 case Direction.Back:
-                    return new Location(x, y, z - 1);
+                    return new playerLocation(x, y, z - 1);
                 case Direction.Forward:
-                    return new Location(x, y, z + 1);
+                    return new playerLocation(x, y, z + 1);
                 default:
                     return null;
             }
